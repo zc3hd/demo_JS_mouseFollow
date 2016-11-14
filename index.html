@@ -58,7 +58,11 @@
 
 </div>
 <a href= 'https://www.baidu.com/'>百度</a>
-<button  id="btn">点我加载下面文档</button>
+<p>CC_Blog</p>
+<ul id="table">
+    <li id="01">第一天日志</li>
+    <li id="02">第二天日志</li>
+</ul>
 <div id="content"></div>
 </body>
 </html>
@@ -129,9 +133,15 @@
     }
 
 
-$('#btn').click(function(){
-    $('#content').load('./temp/01demo.htm',function(){
-        console.log(454545);
-    })
-})
+var lis = $('#table li');
+var content = $('#content');
+for (var i = 0; i < lis.length; i++) {
+   
+    $(lis[i]).click(function(e){
+        var btn  = $(e)[0].target;
+        var index = $(btn).attr('id');
+        content.load('./temp/'+index+'demo.htm');
+    });
+}
+
 </script>
