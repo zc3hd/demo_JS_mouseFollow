@@ -44,6 +44,7 @@
         }
     </style>
 </head>
+<script src="./JS/jquery-1.11.3.js"></script>
 <body>
 <div class="box" id="box">
     <div class="small">
@@ -57,6 +58,8 @@
 
 </div>
 <a href= 'https://www.baidu.com/'>百度</a>
+<button  id="btn">点我加载下面文档</button>
+<div id="content"></div>
 </body>
 </html>
 <script>
@@ -126,4 +129,9 @@
     }
 
 
+$('#btn').click(function(){
+    $('#content').load('./temp/01demo.htm',function(){
+        console.log(454545);
+    })
+})
 </script>
